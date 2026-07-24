@@ -13,7 +13,7 @@ permalink: /en/get-started/
         </div>
         <h1 class="text-5xl font-black font-display mb-6 text-gray-900 dark:text-white uppercase tracking-tighter">Get started</h1>
         <p class="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed max-w-2xl">
-            Install from <strong>PyPI</strong>, then wire an AI agent to GitHub Issues on <strong>Windows, macOS, or Linux</strong>. Cursor, Claude Code, Copilot, and more — see also <a href="/en/platforms/" class="text-brand-purple hover:underline">Platforms</a>.
+            Three steps for the CLI. One more if you want the <strong>AI agent</strong> to open issues from chat. Works on <strong>Windows, macOS, and Linux</strong> — see also <a href="/en/platforms/" class="text-brand-purple hover:underline">Platforms</a>.
         </p>
     </div>
 </section>
@@ -25,10 +25,9 @@ permalink: /en/get-started/
                 <span class="text-brand-purple font-black font-mono text-2xl">01</span>
                 <div>
                     <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Install from PyPI</h2>
-                    <p class="text-sm text-gray-500 mb-4">One command: get the <code>vibeissue</code> and <code>vibeissue-adopt</code> CLIs. Package: <a href="https://pypi.org/project/vibeissue/" class="text-brand-purple hover:underline" target="_blank" rel="noopener">pypi.org/project/vibeissue</a>.</p>
+                    <p class="text-sm text-gray-500 mb-4">Package: <a href="https://pypi.org/project/vibeissue/" class="text-brand-purple hover:underline" target="_blank" rel="noopener">pypi.org/project/vibeissue</a>.</p>
                     <div class="code-block text-sm">
-                        <span class="cmd">pip install vibeissue</span><br>
-                        <span class="cmd">vibeissue --help</span>
+                        <span class="cmd">pip install vibeissue</span>
                     </div>
                 </div>
             </div>
@@ -38,13 +37,8 @@ permalink: /en/get-started/
             <div class="flex items-start gap-4">
                 <span class="text-brand-pink font-black font-mono text-2xl">02</span>
                 <div>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">GitHub token</h2>
-                    <p class="text-sm text-gray-500 mb-4">Create a Personal Access Token with <strong>Issues: read & write</strong> on the target repository.</p>
-                    <p class="text-sm text-gray-500 mb-4">Set <code>GITHUB_TOKEN</code> in your environment — see the <a href="/docs/getting-started/token/" class="text-brand-purple hover:underline">token guide</a>. Alternatives: <code>.env</code> (gitignored) or <code>.secrets/github_token</code> (one line).</p>
-                    <div class="code-block text-sm">
-                        <span class="comment"># Verify (after setting the token)</span><br>
-                        <span class="cmd">python -c "import os; print('OK' if os.environ.get('GITHUB_TOKEN') else 'MISSING')"</span>
-                    </div>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Create a GitHub token</h2>
+                    <p class="text-sm text-gray-500 mb-4">Personal Access Token with <strong>Issues: read & write</strong> on the target repo. OS details: <a href="/docs/getting-started/token/" class="text-brand-purple hover:underline">token guide</a>.</p>
                 </div>
             </div>
         </div>
@@ -53,41 +47,36 @@ permalink: /en/get-started/
             <div class="flex items-start gap-4">
                 <span class="text-green-500 font-black font-mono text-2xl">03</span>
                 <div>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Adopt into your project</h2>
-                    <p class="text-sm text-gray-500 mb-4">Copy skeleton, labels, templates, and agent rules into the repo. Also sets the GitHub slug (<code>owner/name</code>).</p>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Put token and repo in <code>.env</code></h2>
+                    <p class="text-sm text-gray-500 mb-4">In the folder where you run commands (your project). Keep <code>.env</code> gitignored.</p>
                     <div class="code-block text-sm">
-                        <span class="cmd">vibeissue-adopt --target ../my-repo --repo myorg/my-app</span><br><br>
-                        <span class="comment"># or only the slug if the skeleton is already there</span><br>
-                        <span class="cmd"># in .env → GITHUB_REPO=myorg/my-app</span>
+                        <span class="cmd">GITHUB_TOKEN=github_pat_…</span><br>
+                        <span class="cmd">GITHUB_REPO=myorg/my-app</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4 mb-2">Try it:</p>
+                    <div class="code-block text-sm">
+                        <span class="cmd">vibeissue list</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card-glow bg-gray-50 dark:bg-[#111] p-8 border border-gray-200 dark:border-white/10">
+        <div class="pt-4 border-t border-gray-200 dark:border-white/10">
+            <p class="text-xs font-mono uppercase tracking-widest text-brand-purple mb-6">Optional — full path (AI agents)</p>
+        </div>
+
+        <div class="card-glow bg-gray-50 dark:bg-[#111] p-8 border border-dashed border-brand-purple/40">
             <div class="flex items-start gap-4">
-                <span class="text-brand-purple font-black font-mono text-2xl">04</span>
+                <span class="text-brand-purple font-black font-mono text-2xl">+</span>
                 <div>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Labels</h2>
-                    <p class="text-sm text-gray-500 mb-4">From the project folder, apply labels from <code>tracker/labels.yml</code>.</p>
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Adopt + open your agent</h2>
+                    <p class="text-sm text-gray-500 mb-4">Copies skeleton, labels, templates, and agent rules (<code>AGENTS.md</code>, Cursor, Copilot, Claude). Then open the project in Cursor / Claude Code / Copilot and say: <em>"Open an issue for…"</em>.</p>
                     <div class="code-block text-sm">
+                        <span class="cmd">vibeissue-adopt --target ../my-repo --repo myorg/my-app</span><br>
                         <span class="cmd">cd ../my-repo</span><br>
                         <span class="cmd">vibeissue labels --apply</span>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-glow bg-gray-50 dark:bg-[#111] p-8 border border-gray-200 dark:border-white/10">
-            <div class="flex items-start gap-4">
-                <span class="text-brand-pink font-black font-mono text-2xl">05</span>
-                <div>
-                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-3">First issue + AI agent</h2>
-                    <p class="text-sm text-gray-500 mb-4">Test the CLI, then open the project in your agent (Cursor, Claude Code, Copilot, …) — instructions are already in the repo.</p>
-                    <div class="code-block text-sm">
-                        <span class="cmd">vibeissue create "[Bug] Setup test" --labels bug</span><br>
-                        <span class="cmd">vibeissue list</span>
-                    </div>
+                    <p class="text-sm text-gray-500 mt-4">Without this step the CLI works; the agent does not yet know to run <code>vibeissue</code>.</p>
                 </div>
             </div>
         </div>
