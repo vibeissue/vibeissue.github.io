@@ -1,6 +1,6 @@
 # Vibeissue — branding
 
-SVG logos for the violet beam theme.
+SVG logos for the violet Vibeissue brand.
 
 | File | Use |
 |------|-----|
