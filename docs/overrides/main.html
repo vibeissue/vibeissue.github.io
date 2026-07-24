@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block announce %}
+  {% if config.theme.language == "it" %}
+    {% set back_url = "https://vibeissue.github.io/it/" %}
+    {% set back_label = "← Torna al sito web vibeissue.github.io" %}
+  {% else %}
+    {% set back_url = "https://vibeissue.github.io/en/" %}
+    {% set back_label = "← Back to main website (vibeissue.github.io)" %}
+  {% endif %}
+  <a href="{{ back_url }}"><strong>{{ back_label }}</strong></a>
+{% endblock %}
