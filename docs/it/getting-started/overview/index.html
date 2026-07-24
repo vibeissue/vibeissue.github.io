@@ -1481,27 +1481,27 @@
 <h2 id="la-soluzione">La soluzione<a class="headerlink" href="#la-soluzione" title="Permanent link">&para;</a></h2>
 <p>Vibeissue collega la <strong>chat dell'agente AI</strong> a <strong>GitHub Issues</strong> con:</p>
 <ol>
-<li><strong><code>scripts/github_issue.py</code></strong> — CLI Python stdlib</li>
+<li><strong><code>pip install vibeissue</code></strong> — CLI su <a href="https://pypi.org/project/vibeissue/">PyPI</a> (<code>vibeissue</code>, <code>vibeissue-adopt</code>)</li>
 <li><strong>Istruzioni agente</strong> — file letti dall'LLM (<code>AGENTS.md</code>, regola Cursor, Copilot, Claude, …)</li>
 <li><strong>Template GitHub</strong> — form web per aprire issue dal browser</li>
-<li><strong><code>adopt.py</code></strong> — copia lo skeleton in qualsiasi repo con un comando</li>
+<li><strong>Skeleton nel repo</strong> — label, config tracker e regole via adopt</li>
 </ol>
 <p>GitHub Issues diventa la <strong>fonte di verità</strong>. I markdown locali restano per piani dettagliati e archivio — non per lo stato operativo.</p>
 <h2 id="architettura">Architettura<a class="headerlink" href="#architettura" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Tu in chat  →  Agente AI (legge AGENTS.md)  →  github_issue.py  →  GitHub Issues
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Tu in chat  →  Agente AI (legge AGENTS.md)  →  CLI vibeissue  →  GitHub Issues
 </code></pre></div>
 <p>Requisiti per ogni piattaforma:</p>
 <ul>
-<li>Python 3 (<strong>Windows, macOS, Linux</strong>)</li>
+<li>Python 3 (<strong>Windows, macOS, Linux</strong>) + <code>pip install vibeissue</code></li>
 <li><code>GITHUB_TOKEN</code> con Issues read/write</li>
 <li>Slug in <code>tracker/github_repo</code> o <code>GITHUB_REPO</code></li>
-<li>Istruzioni agente: <em>esegui lo script, non delegare all'utente</em></li>
+<li>Istruzioni agente: <em>esegui la CLI, non delegare all'utente</em></li>
 </ul>
 <h2 id="prossimi-passi">Prossimi passi<a class="headerlink" href="#prossimi-passi" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="../token/">Token GitHub</a></li>
 <li><a href="../repository/">Slug repository</a></li>
-<li><a href="../adopt/">Adotta in un progetto</a> (opzionale)</li>
+<li><a href="../adopt/">Adotta in un progetto</a></li>
 <li><a href="../../platforms/overview/">Scegli la piattaforma</a></li>
 </ol>
 

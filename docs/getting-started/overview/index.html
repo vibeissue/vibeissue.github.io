@@ -1481,27 +1481,27 @@
 <h2 id="the-solution">The solution<a class="headerlink" href="#the-solution" title="Permanent link">&para;</a></h2>
 <p>Vibeissue connects <strong>AI agent chat</strong> to <strong>GitHub Issues</strong> with:</p>
 <ol>
-<li><strong><code>scripts/github_issue.py</code></strong> — stdlib Python CLI</li>
+<li><strong><code>pip install vibeissue</code></strong> — CLI on <a href="https://pypi.org/project/vibeissue/">PyPI</a> (<code>vibeissue</code>, <code>vibeissue-adopt</code>)</li>
 <li><strong>Agent instructions</strong> — files the LLM reads (<code>AGENTS.md</code>, Cursor rule, Copilot, Claude, …)</li>
 <li><strong>GitHub templates</strong> — web forms for browser-based issue creation</li>
-<li><strong><code>adopt.py</code></strong> — copy the skeleton into any repo in one command</li>
+<li><strong>Skeleton in your repo</strong> — labels, tracker config, and rules via adopt</li>
 </ol>
 <p>GitHub Issues becomes the <strong>source of truth</strong>. Local markdown stays for detailed plans and archives — not operational status.</p>
 <h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>You in chat  →  AI agent (reads AGENTS.md)  →  github_issue.py  →  GitHub Issues
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>You in chat  →  AI agent (reads AGENTS.md)  →  vibeissue CLI  →  GitHub Issues
 </code></pre></div>
 <p>Requirements for any platform:</p>
 <ul>
-<li>Python 3 (<strong>Windows, macOS, Linux</strong>)</li>
+<li>Python 3 (<strong>Windows, macOS, Linux</strong>) + <code>pip install vibeissue</code></li>
 <li><code>GITHUB_TOKEN</code> with Issues read/write</li>
 <li>Repo slug in <code>tracker/github_repo</code> or <code>GITHUB_REPO</code></li>
-<li>Agent instructions: <em>run the script, don't delegate to the user</em></li>
+<li>Agent instructions: <em>run the CLI, don't delegate to the user</em></li>
 </ul>
 <h2 id="next-steps">Next steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ol>
 <li><a href="../token/">GitHub token</a></li>
 <li><a href="../repository/">Repository slug</a></li>
-<li><a href="../adopt/">Adopt into a project</a> (optional)</li>
+<li><a href="../adopt/">Adopt into a project</a></li>
 <li><a href="../../platforms/overview/">Choose your platform</a></li>
 </ol>
 

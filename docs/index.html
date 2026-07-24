@@ -1548,7 +1548,7 @@
 <tbody>
 <tr>
 <td><strong>CLI</strong></td>
-<td><code>scripts/github_issue.py</code> — create, list, comment, close, import issues</td>
+<td><code>vibeissue</code> (PyPI) — create, list, comment, close, import issues</td>
 </tr>
 <tr>
 <td><strong>Agent rules</strong></td>
@@ -1564,14 +1564,16 @@
 <p>You ship with <strong>vibe coding</strong> (LLMs, fast iteration) and lose track of bugs and tasks buried in chat. Vibeissue moves operational status to GitHub Issues — not scattered markdown files.</p>
 <p><strong>Not Cursor-only.</strong> The same CLI runs everywhere; only the instruction file path changes per IDE.</p>
 <h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from pathlib import Path; Path(&#39;tracker/github_repo&#39;).write_text(&#39;myorg/my-app\n&#39;)&quot;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>python<span class="w"> </span>scripts/github_issue.py<span class="w"> </span>labels<span class="w"> </span>--apply
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>python<span class="w"> </span>scripts/github_issue.py<span class="w"> </span>create<span class="w"> </span><span class="s2">&quot;Setup test&quot;</span><span class="w"> </span>--labels<span class="w"> </span>task
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>python<span class="w"> </span>scripts/github_issue.py<span class="w"> </span>list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>vibeissue
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>vibeissue-adopt<span class="w"> </span>--target<span class="w"> </span>../my-repo<span class="w"> </span>--repo<span class="w"> </span>myorg/my-app
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>../my-repo
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>vibeissue<span class="w"> </span>labels<span class="w"> </span>--apply
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>vibeissue<span class="w"> </span>create<span class="w"> </span><span class="s2">&quot;Setup test&quot;</span><span class="w"> </span>--labels<span class="w"> </span>task
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>vibeissue<span class="w"> </span>list
 </code></pre></div>
 <p>Details: <a href="getting-started/overview/">Overview</a> · <a href="getting-started/token/">Token</a> · <a href="platforms/overview/">Platforms</a></p>
 <h2 id="adopt-into-your-repo">Adopt into your repo<a class="headerlink" href="#adopt-into-your-repo" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>python<span class="w"> </span>scripts/adopt.py<span class="w"> </span>--target<span class="w"> </span>../my-repo<span class="w"> </span>--repo<span class="w"> </span>myorg/my-app
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>vibeissue-adopt<span class="w"> </span>--target<span class="w"> </span>../my-repo<span class="w"> </span>--repo<span class="w"> </span>myorg/my-app
 </code></pre></div>
 <p>Copies CLI, labels, templates, and agent instruction files for multiple platforms.</p>
 <h2 id="documentation-map">Documentation map<a class="headerlink" href="#documentation-map" title="Permanent link">&para;</a></h2>
